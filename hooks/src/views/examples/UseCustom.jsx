@@ -13,7 +13,9 @@ const UseCustom = (props) => {
     const response = useFetch(url)
 
     function showStates(states){
-        return states.map(obj => <li key={obj.nome}>{obj.nome} - {obj.sigla}</li>)
+        if(states != null){
+            return states.map((obj, i) => <tr key={obj.nome} className={i % 2 == 0 ? 'cinza': 'branco'}><td>{obj.nome}</td> <td> {obj.sigla}</td></tr>)
+        }
     }
 
     return (
@@ -33,9 +35,17 @@ const UseCustom = (props) => {
             </div>
             <SelectionTitle title="Exercicio #02"/>
             <div className="center">
-                <ul>
-                    {!response.loading ? showStates(response.data) : false}
-                </ul>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sigla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {showStates(response.data)}
+                    </tbody>
+                </table>
             </div>
         </div>
     )

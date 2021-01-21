@@ -38,3 +38,14 @@ body {
     align-items: center;
     text-align: center;
 }
+
+.table th {
+    width: 100%;
+    background-color: rgb(98, 176, 248);
+}
+.table .cinza {
+    background-color: rgb(182, 182, 182);
+}
+.table .branco {
+    background-color: rgb(255, 255, 255);
+}

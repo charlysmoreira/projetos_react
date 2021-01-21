@@ -1,0 +1,6 @@
+.App {
+
+    display: flex;
+    height: 100vh; /* divide a tela em 100 partes iguais, neste caso ocupa a tela inteira*/
+    
+}
